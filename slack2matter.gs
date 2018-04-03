@@ -21,10 +21,12 @@ function doPost(e) {
 //-------------------------
 	
 	var name = json["user"]["real_name"];
+	var image = json["user"]["profile"]["image_24"]
 	var msg = "チャンネル名：" + chName + "\n内容 : "+ e.parameter.text ;
 	
 	var payload = {
 			"text" : "Slackから転送\n" + msg,
+		        "icon_url" : image, 
 			"username" : name, 
 		}
 		
