@@ -8,7 +8,7 @@ function doPost(e) {
 	 var chName = e.parameter.channel_name;
 	 var userName = e.parameter.user_name;
 	 
-//ssdコード参考に追加---------
+
 	var user_options = {
 	 "method" : "post",
 			"payload" : {
@@ -18,7 +18,7 @@ function doPost(e) {
 		};
 		var response = UrlFetchApp.fetch("https://slack.com/api/users.info", user_options);
 		var json = JSON.parse(response.getContentText());
-//-------------------------
+
 	
 	var name = json["user"]["real_name"];
 	var image = json["user"]["profile"]["image_24"]
